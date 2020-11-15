@@ -553,6 +553,10 @@ img {
 }
 
 /* Portfolio.html*/
+.list-products {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .list-direction-port {
   display: flex;
@@ -566,7 +570,6 @@ img {
   margin-right: 30px;
   margin-bottom: 30px;
   border: 1px solid #eeeeee;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .products:nth-child(3n) {
@@ -577,15 +580,18 @@ img {
   margin-bottom: 0px;
 }
 
+.prod-link {
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .products:hover,
 .products:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.products:hover .product-overlay,
-.products:hover::before,
-.products:focus .product-overlay,
-.products:focus::before {
+.prod-link:hover .product-overlay,
+.prod-link:focus .product-overlay {
   opacity: 1;
   transform: translateY(0);
 }
@@ -598,18 +604,23 @@ img {
 
 .product-overlay {
   position: absolute;
-  padding: 24px 24px;
+  padding: 63px 24px;
   height: 100%;
   width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
 
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.56;
+  letter-spacing: 0.03em;
   color: var(--white);
   background-color: rgba(33, 150, 243, 0.9);
 
   opacity: 0;
   transform: translateY(100%);
-  transition: transform 250ms ease;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-name {
@@ -683,11 +694,6 @@ img {
 
 .button-menu-list:not(:first-child) {
   margin-left: 8px;
-}
-
-.list-products {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .description {
