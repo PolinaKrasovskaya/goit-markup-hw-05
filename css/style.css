@@ -582,6 +582,36 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.products:hover .product-overlay,
+.products:hover::before,
+.products:focus .product-overlay,
+.products:focus::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-cotainer {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.product-overlay {
+  position: absolute;
+  padding: 24px 24px;
+  height: 100%;
+  width: 100%;
+
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--white);
+  background-color: rgba(33, 150, 243, 0.9);
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 250ms ease;
+}
+
 .product-name {
   font-weight: 700;
   font-size: 18px;
